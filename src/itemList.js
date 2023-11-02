@@ -70,13 +70,13 @@ const itemList1 = [
 },
 ];
 
-const itemList = Array(Math.round(Math.random() * 1000)).fill(null).map(
+const itemList = Array(Math.round(Math.random() * 10)).fill(null).map(
   (row, index) => {
     const price = Math.round(Math.random() * 1000000) + 100000;
     return{
       id: index, 
       name: "کالای شماره" + index + 1,
-      description: "کالای شماره" + " " + Math.random(),
+      description: "توضیحات کالای مدل" + " " + Math.random(),
       price: price,
       salePrice: Math.round(price / 3),
       mojodi: Math.round(Math.random() * 100)
