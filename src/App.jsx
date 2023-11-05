@@ -11,6 +11,7 @@ export default function App() {
     // Purchase operation
 
     const [basketList, setbasketList] = useState([]);
+    const [openBasketDialog, setbasketDialog] = useState(false);
 
     const buyItem = (item) => {
 
@@ -170,17 +171,24 @@ export default function App() {
       
       {/* basket dialog */}
       
-      <div className='rounded-xl bg-[#f1f1f1] h-[600px] absolute top-32 w-full' >
-        <div className='flex flex-col p-6 gap-5'>
+      <div className='bg-[#00000088] fixed top-0 w-full h-full p-8 backdrop-blur-sm' >
+        <div className='flex flex-col bg-white p-4 gap-4 rounded-xl'>
           {getBasketGroupList().map((orderItem)=> {
             const {item , count} = orderItem;
             return (<div className='flex gap-2 items-center' key={item.name}>
               <img src={imageBanner} className='w-10 h-10'/>
-              {item.name} &nbsp; 
-              {item.description} 
-              &nbsp;&nbsp;&nbsp;تعداد:&nbsp;&nbsp;
-              {count}
+              <div className='text-sm'>
+                {item.name}
+
+                <span className='mr-10'>
+                  تعداد خرید:
+                  {count}
+                </span>
+                <p className='mt-1'>{item.description}</p>
+              </div>
+              <button>X</button>
               </div>);
+              
           })}
         </div>
       </div>
