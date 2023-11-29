@@ -1,4 +1,4 @@
-import imageDeress1 from './assets/deress1.jpg'
+import imageDeress1 from '../assets/deress1.jpg'
 
 const itemList1 = [
 {
